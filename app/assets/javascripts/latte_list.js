@@ -1,25 +1,13 @@
 $(document).ready(function(){
 
-var consumerKey = ENV['yelp_consumer_key'];
-var consumerSecret = ENV['yelp_consumer_secret'];
-var token = ENV['yelp_token'];
-var tokenSecret = ENV['yelp_token_secret'];
+	$("#search").on('submit', function(event){
+		event.preventDefault();
+		alert("submitted");
+		searchTerm = $('#location').val();
 
-$("#form").on('submit', function(event){
-	event.preventDefault();
-	location = $('#location').val();
-	getList(location);
-});
-
-function getList(location){
-	$.ajax({
-		url: 'http://api.yelp.com/v2/search?term=coffee&location=' + location,
-		method: 'GET',
-		dataType: 'jsonp',
-		success: function(data){
-
-		}
-	})
-};
-
+		$.post('/search', { loc: searchTerm }, function(data){
+			inactive = true;
+			console.log(data);
+		});
+	});
 });

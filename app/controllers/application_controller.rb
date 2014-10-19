@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-  	
+  end
+
+  def search
+    parameters = { location: params[:loc], limit: 10 }
+    render json: Yelp.client.search('coffee', parameters)
   end
 end
