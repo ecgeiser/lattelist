@@ -19,7 +19,13 @@ $(document).ready(function(){
 					var addressBlock = address[0] + '<br>' + address[1] + '<br> ';
 				};
 
-				$('#results').append("<div class='shop'><h3><a href='" + coffeeShop['url'] + "' target='_blank'>" + coffeeShop['name'] + "</a></h3><img src='" + coffeeShop['image_url'] + "'><p>" + addressBlock + "</p></div>");
+				if (coffeeShop['image_url']) {
+					shopImg = coffeeShop['image_url'];
+				} else {
+					shopImg = 'http://i3.mirror.co.uk/incoming/article1848851.ece/alternates/s1227b/Coffee-Art-by-Michael-Breach.jpg';
+				};
+
+				$('#results').append("<div class='shop'><h3><a href='" + coffeeShop['url'] + "' target='_blank'>" + coffeeShop['name'] + "</a></h3><img src='" + shopImg + "'><p>" + addressBlock + "</p></div>");
 			}
 		});
 
