@@ -1,5 +1,8 @@
 == README
 
+About:
+LatteList is a simple app that displays 10 coffee shops based on user location input.  This app utilizes the Yelp API.
+
 Setup:
 
 * <tt>bundle install</tt>
