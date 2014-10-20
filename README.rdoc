@@ -9,7 +9,7 @@ Setup:
 
 * <tt>figaro install</tt>
 
-* add your API secrets to <tt>application.yml</tt>
+* add your API secrets to <tt>application.yml</tt>.  Use the variable names 'yelp_consumer_key', 'yelp_consumer_secret', 'yelp_token', and 'yelp_token_secret'.  If you do not have Yelp API secrets, get them here: http://www.yelp.com/developers/manage_api_keys
 
 * <tt>rake db:create</tt>
 
