@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
   end
 
   def search
-    parameters = { location: params[:loc], limit: 10 }
-    render json: Yelp.client.search('coffee', parameters)
+  	loc = params[:loc]
+    parameters = { limit: 10, term: 'coffee' }
+    render json: Yelp.client.search(loc, parameters)
   end
 end
